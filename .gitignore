@@ -178,3 +178,4 @@ cython_debug/
 /.idea/cs185c_fall2024.iml
 /.idea/.gitignore
 /homework/homework_3/Frames/
+/Downloading ECCO Data.ipynb
