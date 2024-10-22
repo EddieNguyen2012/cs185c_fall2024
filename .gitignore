@@ -179,3 +179,4 @@ cython_debug/
 /.idea/.gitignore
 /homework/homework_3/Frames/
 /Downloading ECCO Data.ipynb
+/MITgcm/
