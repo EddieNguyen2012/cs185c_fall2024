@@ -182,3 +182,5 @@ cython_debug/
 /MITgcm/
 /project/data/
 /project/input/
+/project/run/
+/project/frames/ts_surface/

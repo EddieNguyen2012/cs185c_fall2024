@@ -4,8 +4,8 @@
 
  &EXF_NML_01
  exf_albedo        = 0.1,
- useExfZenIncoming = .TRUE., 
- select_ZenAlbedo  = 1,
+# useExfZenIncoming = .TRUE., 
+# select_ZenAlbedo  = 1,
  useExfYearlyFields= .TRUE.,
  useExfCheckRange  = .FALSE.,
  /
@@ -68,3 +68,24 @@
  swdown_interpMethod = 0,
  lwdown_interpMethod = 0,
  /
+
+ &EXF_NML_OBCS
+ obcsEstartdate1     = 19920101,
+ obcsEstartdate2     = 000000,
+ obcsEperiod         = 2592000,
+#
+ obcsSstartdate1     = 19920101,
+ obcsSstartdate2     = 000000,
+ obcsSperiod         = 2592000,
+#
+ obcsNstartdate1     = 19920101,
+ obcsNstartdate2     = 000000,
+ obcsNperiod         = 2592000,
+#
+# obcsWstartdate1     = 19920101,
+# obcsWstartdate2     = 120000,
+# obcsWperiod         = 86400.0,
+#
+ useOBCSYearlyFields = .TRUE.,
+#
+ &

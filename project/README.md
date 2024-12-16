@@ -18,5 +18,44 @@ them to see the difference between the 2 models. I want to investigate seasonal 
 changes in temperature and salinity profiles. Then, Analyze the differences in vertical temperature and salinity profiles between the El Nino
 conditions in 2015 and the La Nina conditions in 2017, focusing on changes in stratification and mixed layer depth during each monsoon season.
 
+## Reproducing Model Results
 
+The following steps outline how to construct the model files, configure and run the model, and assess the model results.
 
+### Step 1: Create the Model Files
+Several input files need to be created to run the model. Generate the following list of files using the notebooks indicated in paratheses:
+- Model Grid (notebooks/Creating the Model Grid.ipynb)
+- Bathymetry (notebooks/Creating the Bathymetry.ipynb)
+- Initial Conditions (notebooks/Creating the Initial Conditions.ipynb)
+- External Forcing Conditions (notebooks/Creating the External Forcing Conditions.ipynb)
+- Boundary Conditions (notebooks/Creating the Boundary Conditions.ipynb)
+The model files should be placed into the  `input` directory.
+
+### Step 2: Add files to the computing cluster
+Once the input files have been created, the model files can be transferred to the computing cluster. Begin by cloning a copy of [MITgcm](https://github.com/MITgcm/MITgcm) into your scratch directory and make a folder for the configuration, .e.g.
+```
+mkdir MITgcm/configurations/ca_upwelling
+```
+Then, use the `scp` command to send the `code`, `input`, and `namelist` directories to your configuration directory. 
+
+### Step 3: Compile the model
+Once all of the files are on the computing cluster, the model can be compiled. Make a `build` directory in the configuration directory and run the following lines:
+```
+../../../tools/genmake2 -of ../../../tools/build_options/darwin_amd64_gfortran -mods ../code -mpi
+make depend
+make
+```
+
+### Step 4.1: Run the model for 2015
+After the compilation is complete, run the model using the 2015 data. Move to the `run` directory, link everything from `input` and `code`, and the submit the job script:
+```
+sbatch cs185c.slm
+```
+
+### Step 4.2: Run the model for 2017
+Again, link everything from `input` and `code` to a directory called `run_2017`. Then, edit the `data.cal` file to change the `startDate_1` to `20170115`. Then, submit the job script again to rerun the model.
+
+### Step 5: Analyze the Results
+
+All the analysis steps and results are in `Result Visualization.ipynb`. It also generate a video in `frames` folder to visualize the
+change of stratification.
