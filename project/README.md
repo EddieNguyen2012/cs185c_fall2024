@@ -24,11 +24,11 @@ The following steps outline how to construct the model files, configure and run 
 
 ### Step 1: Create the Model Files
 Several input files need to be created to run the model. Generate the following list of files using the notebooks indicated in paratheses:
-- Model Grid (notebooks/Creating the Model Grid.ipynb)
-- Bathymetry (notebooks/Creating the Bathymetry.ipynb)
-- Initial Conditions (notebooks/Creating the Initial Conditions.ipynb)
-- External Forcing Conditions (notebooks/Creating the External Forcing Conditions.ipynb)
-- Boundary Conditions (notebooks/Creating the Boundary Conditions.ipynb)
+- Model Grid (Creating the Model Grid.ipynb)
+- Bathymetry (Creating the Bathymetry.ipynb)
+- Initial Conditions (Creating the Initial Conditions.ipynb)
+- External Forcing Conditions (Creating the External Forcing Conditions.ipynb)
+- Boundary Conditions (Creating the Boundary Conditions.ipynb)
 The model files should be placed into the  `input` directory.
 
 ### Step 2: Add files to the computing cluster
